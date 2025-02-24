@@ -126,16 +126,22 @@ if st.session_state.selected_items:
     for idx, item in enumerate(st.session_state.selected_items, start=1):
         st.write(f"{idx}. {item}")
 
-    # Opcja zapisu do pliku tekstowego umieszczona pod listą
+
+# Tworzymy pusty kontener
+download_placeholder = st.empty()
+
+# Opcja zapisu do pliku tekstowego
+if st.session_state.selected_items:
     file_content = "\n".join(st.session_state.selected_items)
-    
-    st.download_button(
-        label="Pobierz listę jako plik tekstowy",
-        data=file_content,
-        file_name="wybory.txt",
-        mime="text/plain"
-    )
-    
+
+    with download_placeholder:
+        st.download_button(
+            label="Pobierz listę jako plik tekstowy",
+            data=file_content,
+            file_name="wybory.txt",
+            mime="text/plain"
+        )
+
 
 
 
