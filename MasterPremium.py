@@ -111,13 +111,51 @@ def app():
             st.write(f"{idx}. {item}")
 
     # Opcja zapisu do pliku tekstowego
-    if st.session_state.selected_items:
-        st.download_button(
-            label="Pobierz listę jako plik tekstowy",
-            data="\n".join(st.session_state.selected_items),
-            file_name="wybory.txt",
-            mime="text/plain"
-        )
+ascii_art = """
+                                                            
+                                                            
+                                                            
+                                           :                
+                                          := =:             
+            :=                               :*#%           
+        :@@%        ::                          #@@:        
+       #@@:       **@@:                          *@@*       
+      #@@:        :%@@@#                          :@@#      
+    *@@@:           %#@@@%:                        :@@#     
+    #@@:      =*:     *@@@@=                        :@@#    
+   #@@#       #@@:     :@@@@#:                =:     :@@#   
+  :@@@       =#@@@#:     =#@@@#: ::::::=@@@@@@@@#:    :@@#  
+  #@@%         %@@@@%      %@@@@%@@@@@@@@@@@%%@@@@:   :@@#  
+  #@@:          :#@@@#=     :#@@@@@@@@=::::: :@@@@:    %@@= 
+ *@@@:     :#:    :@@@@@:     :#:            =@@@*     *@@* 
+ *@@@:     #@@%=   :*@@@@*                   @@@@:     *@@* 
+ *@@@:     #@@@@=    :%@@@#%                %@@@#      *@@* 
+  #@@=      :#@@@@:    %#@@@%:              #@@@       %@@* 
+  #@@@        =@@@@#*    *@@@@*:           *@@@%      :@@@: 
+  :@@@%        :%@@@@%    :@@@@@#         :@@@@:      #@@#  
+   #@@#           #@@@@=:   =#@@@#:       @@@@*      :@@@   
+    #@@#           :@@@@@:    %@@@@%=     %@@@:     :@@@%   
+     #@@#           :=@@@@#    :#@@@@*     :##     :@@@%    
+      #@@#:            %@@@@%:   :#@##%           #@@@%     
+       #@@@%            ******     =            *#@@#*      
+        :@@@#=                                =#@@@#        
+          =#@@@#:                          ::@@@@#:         
+            *#@@@%**                    :*%@@@@%=           
+              :@@@@@@###            ####@@@@@::             
+                  ###@@@@@@@@@@@@@@@@@@###                  
+                     ********@@********                     
+                             ::                             
+"""
+
+if st.session_state.selected_items:
+    file_content = "\n".join(st.session_state.selected_items) + "\n\n" + ascii_art
+    st.download_button(
+        label="Pobierz listę jako plik tekstowy",
+        data=file_content,
+        file_name="wybory.txt",
+        mime="text/plain"
+    )
+    
 ascii_art = """
                                                             
                                                             
