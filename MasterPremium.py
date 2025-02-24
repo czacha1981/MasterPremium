@@ -66,9 +66,8 @@ def app():
         )
 
     # Dodanie ASCII Art na dole strony
-    st.text("""
-                                                 
-                                                 
+    st.markdown("""
+    ```
                                                  
                                            :                
                                           := =:             
@@ -100,9 +99,9 @@ def app():
                   ###@@@@@@@@@@@@@@@@@@###                  
                      ********@@********                     
                              ::                              
-    """)
+    ```
+    ")
 
 # Uruchomienie aplikacji
 if __name__ == "__main__":
     app()
-    
