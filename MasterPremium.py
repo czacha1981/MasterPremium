@@ -3,7 +3,7 @@ import streamlit as st
 # Lista tablic rejestracyjnych
 registration_numbers = [
     
-"ZS 742LE (BUS MERCEDES) biały - miejsc 21          ",
+    "ZS 742LE (BUS MERCEDES) biały - miejsc 21          ",
     "ZS 604PS (MAN) biały 2015 - miejsc 59          ",
     "ZS 881MX (MAN) niebieski 2014 - miejsc 54        ",
     "ZS 395MR (MAN) złoty 2013 - miejsc 57               ",
