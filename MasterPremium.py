@@ -64,7 +64,7 @@ registration_numbers = [
     "ZS 749PM",
     "ZS 498LM",
     "ZST 9327A",
-    "ZS716NY (SETRA) 2010 - miejc 80",
+    "ZS716NY (SETRA) 2010 - miejsc 80",
 ]
 
 # Lista relacji autobusów
