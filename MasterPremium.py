@@ -65,6 +65,7 @@ registration_numbers = [
     "ZS 498LM (MAN) 2013 - miejsc 57",
     "ZST 9327A (IRISBUS) 2007 - miejsc 62",
     "ZS716NY (SETRA) 2010 - miejsc 80",
+    "ZST47407 (MAN) 
 
 ]
 
