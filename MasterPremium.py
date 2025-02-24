@@ -2,13 +2,43 @@ import streamlit as st
 
 # Lista tablic rejestracyjnych
 registration_numbers = [
-    "ZS 024MV", "ZS 025MV", "ZS 078PN", "ZS 079PN", "ZS 101UC", "ZS 102UC",
-    "ZS 103UC", "ZS 105MX", "ZS 180PF", "ZS 263LU", "ZS 395MR", "ZS 396MR",
-    "ZS 498LM", "ZS 604PS", "ZS 607PS", "ZS 607PS", "ZS 608PS", "ZS 724NY",
-    "ZS 724NY", "ZS 736LE", "ZS 741LE", "ZS 742LE", "ZS 745LE", "ZS 749PM",
-    "ZS 808HE", "ZS 846MJ", "ZS 846MJ", "ZS 856PP", "ZS 856PP", "ZS 869MW",
-    "ZS 871MW", "ZS 881MX", "ZS 895PS", "ZS 912PM", "ZS 913PM", "ZS 920NP",
-    "ZS 974KN", "ZST 77194"
+        "ZS 024MV":2014,
+    "ZS 025MV":2014,
+    "ZS 078PN":2015,
+"ZS 079PN":2015,
+"ZS 101UC":2024,
+"ZS 102UC":2024,
+"ZS 103UC":2024,
+"ZS 105MX":2013,
+"ZS 180PF":2007,
+"ZS 263LU":2015,
+"ZS 395MR":2013,
+"ZS 396MR":2014,
+"ZS 498LM":2013,
+"ZS 604PS":2015,
+"ZS 607PS":2016,
+"ZS 608PS":2015,
+"ZS 724NY":2014,
+"ZS 736LE":2019,
+"ZS 741LE":2019,
+"ZS 742LE":2019,
+"ZS 745LE":2019,
+"ZS 749PM":2015,
+"ZS 808HE":2017,
+"ZS 845MJ":2013,
+"ZS 846MJ":2013,
+"ZS 856PP":2006,
+"ZS 869MW":2013,
+"ZS 871MW":2013,
+"ZS 881MX":2014,
+"ZS 895PS":2014,
+"ZS 912PM":2014,
+"ZS 913PM":2014,
+"ZS 920NP":2013,
+"ZS 974KN":2018,
+"ZST 77194":2009,
+"ZS716NY":2010,
+ 
 ]
 
 # Lista relacji autobusów
@@ -23,7 +53,7 @@ bus_routes = [
 # Funkcja aplikacji Streamlit
 def app():
     # Tytuł aplikacji
-    st.title("Wybór autobusu i pasażerów")
+    st.title("MASTER PREMIUM")
 
     # Sprawdzamy, czy istnieje lista w session_state, jeśli nie, to ją inicjujemy
     if 'selected_items' not in st.session_state:
