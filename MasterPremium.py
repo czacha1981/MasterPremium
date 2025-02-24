@@ -114,8 +114,7 @@ def app():
 
 
 if st.session_state.selected_items:
-    file_content = (st.session_state.selected_items)
-    st.download_button(
+    st.download_button("Pobierz")
         label="Pobierz listę jako plik tekstowy",
         data=file_content,
         file_name="wybory.txt",
