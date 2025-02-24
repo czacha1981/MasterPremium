@@ -2,44 +2,13 @@ import streamlit as st
 
 # Lista tablic rejestracyjnych
 registration_numbers = [
-       "ZS 024MV",
-"ZS 025MV",
-"ZS 078PN",
-"ZS 079PN",
-"ZS 101UC",
-"ZS 102UC",
-"ZS 103UC",
-"ZS 105MX",
-"ZS 180PF",
-"ZS 263LU",
-"ZS 395MR",
-"ZS 396MR",
-"ZS 498LM",
-"ZS 604PS",
-"ZS 607PS",
-"ZS 607PS",
-"ZS 608PS",
-"ZS 724NY",
-"ZS 724NY",
-"ZS 736LE",
-"ZS 741LE",
-"ZS 742LE",
-"ZS 745LE",
-"ZS 749PM",
-"ZS 808HE",
-"ZS 846MJ",
-"ZS 846MJ",
-"ZS 856PP",
-"ZS 856PP",
-"ZS 869MW",
-"ZS 871MW",
-"ZS 881MX",
-"ZS 895PS",
-"ZS 912PM",
-"ZS 913PM",
-"ZS 920NP",
-"ZS 974KN",
-"ZST 77194"
+    "ZS 024MV", "ZS 025MV", "ZS 078PN", "ZS 079PN", "ZS 101UC", "ZS 102UC",
+    "ZS 103UC", "ZS 105MX", "ZS 180PF", "ZS 263LU", "ZS 395MR", "ZS 396MR",
+    "ZS 498LM", "ZS 604PS", "ZS 607PS", "ZS 607PS", "ZS 608PS", "ZS 724NY",
+    "ZS 724NY", "ZS 736LE", "ZS 741LE", "ZS 742LE", "ZS 745LE", "ZS 749PM",
+    "ZS 808HE", "ZS 846MJ", "ZS 846MJ", "ZS 856PP", "ZS 856PP", "ZS 869MW",
+    "ZS 871MW", "ZS 881MX", "ZS 895PS", "ZS 912PM", "ZS 913PM", "ZS 920NP",
+    "ZS 974KN", "ZST 77194"
 ]
 
 # Lista relacji autobusów
@@ -56,6 +25,10 @@ def app():
     # Tytuł aplikacji
     st.title("Wybór autobusu i pasażerów")
 
+    # Sprawdzamy, czy istnieje lista w session_state, jeśli nie, to ją inicjujemy
+    if 'selected_items' not in st.session_state:
+        st.session_state.selected_items = []
+
     # Wybór tablicy rejestracyjnej
     st.subheader("Wybierz numer rejestracyjny:")
     registration_choice = st.selectbox("Tablica rejestracyjna", registration_numbers)
@@ -68,27 +41,24 @@ def app():
     st.subheader("Wybierz liczbę pasażerów:")
     passengers_count = st.slider("Liczba pasażerów", min_value=1, max_value=100, step=1)
 
-    # Lista do przechowywania wyników wyborów
-    selected_items = []
-
     # Przycisk do dodania wyborów do listy
     if st.button('Dodaj do listy'):
-        selected_items.append(f"Tablica rejestracyjna: {registration_choice}")
-        selected_items.append(f"Relacja autobusu: {bus_route_choice}")
-        selected_items.append(f"Liczba pasażerów: {passengers_count}")
+        # Dodanie do session_state
+        new_entry = f"Tablica rejestracyjna: {registration_choice}, Relacja autobusu: {bus_route_choice}, Liczba pasażerów: {passengers_count}"
+        st.session_state.selected_items.append(new_entry)
         st.success("Dodano do listy!")
 
     # Wyświetlanie listy wyborów
-    if selected_items:
+    if st.session_state.selected_items:
         st.subheader("Twoja lista wyborów:")
-        for item in selected_items:
-            st.write(item)
+        for idx, item in enumerate(st.session_state.selected_items, start=1):
+            st.write(f"{idx}. {item}")
 
     # Opcja zapisu do pliku tekstowego
-    if selected_items:
+    if st.session_state.selected_items:
         st.download_button(
             label="Pobierz listę jako plik tekstowy",
-            data="\n".join(selected_items),
+            data="\n".join(st.session_state.selected_items),
             file_name="wybory.txt",
             mime="text/plain"
         )
@@ -96,3 +66,4 @@ def app():
 # Uruchomienie aplikacji
 if __name__ == "__main__":
     app()
+       
