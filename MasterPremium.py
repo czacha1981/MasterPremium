@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Lista tablic rejestracyjnych
-registration_numbers = [
+registration_numbers = 
 [
     "ZS 742LE (BUS MERCEDES) biały  21          ",
     "ZS 604PS (MAN) biały 2015   59          ",
