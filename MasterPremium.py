@@ -113,12 +113,20 @@ def app():
     # Opcja zapisu do pliku tekstowego
 
 
+
+
+
 # Sprawdzamy, czy istnieje lista w session_state, jeśli nie, to ją inicjujemy
 if 'selected_items' not in st.session_state:
     st.session_state.selected_items = []
 
-# Opcja zapisu do pliku tekstowego
-if st.session_state.selected_items:  # Teraz mamy pewność, że istnieje
+# Wyświetlanie listy wyborów
+if st.session_state.selected_items:
+    st.subheader("Twoja lista wyborów:")
+    for idx, item in enumerate(st.session_state.selected_items, start=1):
+        st.write(f"{idx}. {item}")
+
+    # Opcja zapisu do pliku tekstowego umieszczona pod listą
     file_content = "\n".join(st.session_state.selected_items)
     
     st.download_button(
@@ -127,9 +135,7 @@ if st.session_state.selected_items:  # Teraz mamy pewność, że istnieje
         file_name="wybory.txt",
         mime="text/plain"
     )
-
-
-
+    
 
 
 
