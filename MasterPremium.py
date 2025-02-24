@@ -114,7 +114,7 @@ def app():
 
 
 if st.session_state.selected_items:
-    file_content = "\n".join(st.session_state.selected_items) + "\n\n" + ascii_art
+    file_content = (st.session_state.selected_items)
     st.download_button(
         label="Pobierz listę jako plik tekstowy",
         data=file_content,
