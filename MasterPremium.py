@@ -2,69 +2,16 @@ import streamlit as st
 
 # Lista tablic rejestracyjnych
 registration_numbers = [
-
-"ZS 742LE (BUS MERCEDES) biały - miejsc 21          ",
-    "ZS 604PS (MAN) biały 2015 - miejsc 59          ",
-    "ZS 881MX (MAN) niebieski 2014 - miejsc 54        ",
-    "ZS 395MR (MAN) złoty 2013 - miejsc 57               ",
-    "ZS 078PN (MAN) biały 2015 - miejsc 57         ",
-    "ZS 724NY (MAN) biały 2014 - miejsc 59         ",
-    "ZS 607PS (MAN) biały 2016 - miejsc 57        ",
-    "ZS 079PN (MAN) biały 2015 - miejsc 57        ",
-    "ZS 396MR (MAN) srebrny 2014 - miejsc 57        ",
-    "ZS 102UC (MAN) biały 2024 - miejsc 61      ",
-    "ZS 263LU (MAN) biały 2015 - miejsc 55        ",
-    "ZS 724NY (MAN) biały 2014 - miejsc 59      ",
-    "ZS 856PP (SETRA) żółty 2006 - miejsc 70     ",
-    "ZS 869MW (MAN) czarny 2013 - miejsc 59     ",
-    "ZS 808HE (VOLVO) biały 2017 - miejsc 63     ",
-    "ZS 024MV (MAN) żółty 2014 - miejsc 57      ",
-    "ZS 105MX (MAN) czarny 2013 - miejsc 59       ",
-    "ZS 846MJ (MAN) czarny 2013 - miejsc 57       ",
-    "ZS 913PM (MAN) biały 2014 - miejsc 54         ",
-    "ZS 912PM (MAN) biały 2014 - miejsc 59        ",
-    "ZS 974KN (MAN) biały 2018 - miejsc 51        ",
-    "ZS 101UC (MAN) biały 2024 - miejsc 61         ",
-    "ZS 103UC (MAN) biały 2024 - miejsc 61         ",
-    "ZS 895PS (MAN) biały 2014 - miejsc 54            ",
-    "ZS 745LE (Mercedes) 2019 - miejsc 21             ",
-    "ZS 102UC (MAN) biały 2024 - miejsc 61      ",
-    "ZS 263LU (MAN) biały 2015 - miejsc 55        ",
-    "ZS 724NY (MAN) biały 2014 - miejsc 59      ",
-    "ZS 856PP (SETRA) żółty 2006 - miejsc70     ",
-    "ZS 869MW (MAN) czarny 2013 - miejsc 59     ",
-    "ZS 808HE (VOLVO) biały 2017 - miejsc 63     ",
-    "ZS 024MV (MAN) żółty 2014 - miejsc 57      ",
-    "ZS 105MX (MAN) czarny 2013 - miejsc 59       ",
-    "ZS 846MJ (MAN) czarny 2013 - miejsc 57       ",
-    "ZS 913PM (MAN) biały 2014 - miejsc 54         ",
-    "ZS 912PM (MAN) biały 2014 - miejsc 59        ",
-    "ZS 974KN (MAN) biały 2018 - miejsc 51        ",
-    "ZS 101UC (MAN) biały 2024 - miejsc 61         ",
-    "ZS 103UC (MAN) biały 2024 - miejsc 61         ",
-    "ZS 895PS (MAN) biały 2014 - miejsc 54            ",
-    "ZS 745LE (Mercedes) 2019 - miejsc 21             ",
-    "ZS 920NP (Neoplan) 2013 - miejsc 59",
-    "ZST 77194 (Setra) 2009 - miejsc 52",
-    "ZS 180PF (BOVA) 2007 - miejsc 59",
-    "ZS 025MV (MAN) 2014 - miejsc 57",
-    "ZS 871MW (MAN) 2013 - miejsc 59",
-    "ZS 846MJ (MAN) 2013 - miejsc 57",
-    "ZS 741LE (POLSTER) 2019 - miejsc 21",
-    "ZS 856PP (SETRA) 2006 - miejsc 70",
-    "ZS 749PM (MAN) 2015 - miejsc 57",
-    "ZS 498LM (MAN) 2013 - miejsc 57",
-    "ZS 736LE (POLSTER) 2019 - miejsc 21",
-    "ZS 920NP (Neoplan) 2013 - miejsc 59",
-    "ZS 845MJ (MAN) 2013 - miejsc 57",
-    "DWR 9201H",
-    "ZS 606PS",
-    "ZS 608PS",
-    "ZS 741LE",
-    "ZS 749PM",
-    "ZS 498LM",
-    "ZST 9327A",
-    "ZS716NY (SETRA) 2010 - miejsc 80",
+    "ZS 742LE (BUS MERCEDES) biały - miejsc 21",
+    "ZS 604PS (MAN) biały 2015 - miejsc 59",
+    "ZS 881MX (MAN) niebieski 2014 - miejsc 54",
+    "ZS 395MR (MAN) złoty 2013 - miejsc 57",
+    "ZS 078PN (MAN) biały 2015 - miejsc 57",
+    "ZS 724NY (MAN) biały 2014 - miejsc 59",
+    "ZS 607PS (MAN) biały 2016 - miejsc 57",
+    "ZS 079PN (MAN) biały 2015 - miejsc 57",
+    "ZS 396MR (MAN) srebrny 2014 - miejsc 57",
+    "ZS 102UC (MAN) biały 2024 - miejsc 61",
 ]
 
 # Lista relacji autobusów
@@ -99,7 +46,6 @@ def app():
 
     # Przycisk do dodania wyborów do listy
     if st.button('Dodaj do listy'):
-        # Dodanie do session_state
         new_entry = f"Tablica rejestracyjna: {registration_choice}, Relacja autobusu: {bus_route_choice}, Liczba pasażerów: {passengers_count}, Godzina: {time_choice}"
         st.session_state.selected_items.append(new_entry)
         st.success("Dodano do listy!")
@@ -119,6 +65,44 @@ def app():
             mime="text/plain"
         )
 
+    # Dodanie ASCII Art na dole strony
+    st.text("""
+                                                 
+                                                 
+                                                 
+                                           :                
+                                          := =:             
+            :=                               :*#%           
+        :@@%        ::                          #@@:        
+       #@@:       **@@:                          *@@*       
+      #@@:        :%@@@#                          :@@#      
+    *@@@:           %#@@@%:                        :@@#     
+    #@@:      =*:     *@@@@=                        :@@#    
+   #@@#       #@@:     :@@@@#:                =:     :@@#   
+  :@@@       =#@@@#:     =#@@@#: ::::::=@@@@@@@@#:    :@@#  
+  #@@%         %@@@@%      %@@@@%@@@@@@@@@@@%%@@@@:   :@@#  
+  #@@:          :#@@@#=     :#@@@@@@@@=::::: :@@@@:    %@@= 
+ *@@@:     :#:    :@@@@@:     :#:            =@@@*     *@@* 
+ *@@@:     #@@%=   :*@@@@*                   @@@@:     *@@* 
+ *@@@:     #@@@@=    :%@@@#%                %@@@#      *@@* 
+  #@@=      :#@@@@:    %#@@@%:              #@@@       %@@* 
+  #@@@        =@@@@#*    *@@@@*:           *@@@%      :@@@: 
+  :@@@%        :%@@@@%    :@@@@@#         :@@@@:      #@@#  
+   #@@#           #@@@@=:   =#@@@#:       @@@@*      :@@@   
+    #@@#           :@@@@@:    %@@@@%=     %@@@:     :@@@%   
+     #@@#           :=@@@@#    :#@@@@*     :##     :@@@%    
+      #@@#:            %@@@@%:   :#@##%           #@@@%     
+       #@@@%            ******     =            *#@@#*      
+        :@@@#=                                =#@@@#        
+          =#@@@#:                          ::@@@@#:         
+            *#@@@%**                    :*%@@@@%=           
+              :@@@@@@###            ####@@@@@::             
+                  ###@@@@@@@@@@@@@@@@@@###                  
+                     ********@@********                     
+                             ::                              
+    """)
+
 # Uruchomienie aplikacji
 if __name__ == "__main__":
     app()
+    
