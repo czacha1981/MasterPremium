@@ -112,15 +112,21 @@ def app():
 
     # Opcja zapisu do pliku tekstowego
 
-
+# Opcja zapisu do pliku tekstowego
 if st.session_state.selected_items:
-    st.download_button("Pobierz")
+    # Tworzymy zawartość pliku jako tekst
+    file_content = "\n".join(st.session_state.selected_items)
+    
+    # Przycisk do pobrania pliku
+    st.download_button(
         label="Pobierz listę jako plik tekstowy",
         data=file_content,
         file_name="wybory.txt",
         mime="text/plain"
     )
-    
+
+
+
 
 # Uruchomienie aplikacji
 if __name__ == "__main__":
