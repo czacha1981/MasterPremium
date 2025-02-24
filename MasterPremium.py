@@ -2,52 +2,19 @@ import streamlit as st
 
 # Lista tablic rejestracyjnych
 registration_numbers = [
-        "ZS 024MV-2014",
-    "ZS 025MV-2014",
-    "ZS 078PN-2015",
-"ZS 079PN-2015",
-"ZS 101UC-2024",
-"ZS 102UC-2024",
-"ZS 103UC-2024",
-"ZS 105MX-2013",
-"ZS 180PF-2007",
-"ZS 263LU-2015",
-"ZS 395MR-2013",
-"ZS 396MR-2014",
-"ZS 498LM-2013",
-"ZS 604PS-2015",
-"ZS 607PS-2016",
-"ZS 608PS-2015",
-"ZS 724NY-2014",
-"ZS 736LE-2019",
-"ZS 741LE-2019",
-"ZS 742LE-2019",
-"ZS 745LE-2019",
-"ZS 749PM-2015",
-"ZS 808HE-2017",
-"ZS 845MJ-2013",
-"ZS 846MJ-2013",
-"ZS 856PP-2006",
-"ZS 869MW-2013",
-"ZS 871MW-2013",
-"ZS 881MX-2014",
-"ZS 895PS-2014",
-"ZS 912PM-2014",
-"ZS 913PM-2014",
-"ZS 920NP-2013",
-"ZS 974KN-2018",
-"ZST 77194-2009",
-"ZS716NY-2010",
- 
+    "ZS 024MV-2014", "ZS 025MV-2014", "ZS 078PN-2015", "ZS 079PN-2015", "ZS 101UC-2024",
+    "ZS 102UC-2024", "ZS 103UC-2024", "ZS 105MX-2013", "ZS 180PF-2007", "ZS 263LU-2015",
+    "ZS 395MR-2013", "ZS 396MR-2014", "ZS 498LM-2013", "ZS 604PS-2015", "ZS 607PS-2016",
+    "ZS 608PS-2015", "ZS 724NY-2014", "ZS 736LE-2019", "ZS 741LE-2019", "ZS 742LE-2019",
+    "ZS 745LE-2019", "ZS 749PM-2015", "ZS 808HE-2017", "ZS 845MJ-2013", "ZS 846MJ-2013",
+    "ZS 856PP-2006", "ZS 869MW-2013", "ZS 871MW-2013", "ZS 881MX-2014", "ZS 895PS-2014",
+    "ZS 912PM-2014", "ZS 913PM-2014", "ZS 920NP-2013", "ZS 974KN-2018", "ZST 77194-2009",
+    "ZS716NY-2010"
 ]
 
 # Lista relacji autobusów
 bus_routes = [
-    "Centrum Pomorzany",
-    "Pogodno Gumieńce",
-    "Niebuszewo",
-    "Police",
-    "Dąbie"
+    "Centrum Pomorzany", "Pogodno Gumieńce", "Niebuszewo", "Police", "Dąbie"
 ]
 
 # Funkcja aplikacji Streamlit
@@ -71,10 +38,14 @@ def app():
     st.subheader("Wybierz liczbę pasażerów:")
     passengers_count = st.slider("Liczba pasażerów", min_value=1, max_value=100, step=1)
 
+    # Wybór godziny przyjazdu/odjazdu
+    st.subheader("Wybierz godzinę przyjazdu/odjazdu:")
+    time_choice = st.time_input("Czas", value=None)
+
     # Przycisk do dodania wyborów do listy
     if st.button('Dodaj do listy'):
         # Dodanie do session_state
-        new_entry = f"Tablica rejestracyjna: {registration_choice}, Relacja autobusu: {bus_route_choice}, Liczba pasażerów: {passengers_count}"
+        new_entry = f"Tablica rejestracyjna: {registration_choice}, Relacja autobusu: {bus_route_choice}, Liczba pasażerów: {passengers_count}, Godzina: {time_choice}"
         st.session_state.selected_items.append(new_entry)
         st.success("Dodano do listy!")
 
@@ -96,4 +67,3 @@ def app():
 # Uruchomienie aplikacji
 if __name__ == "__main__":
     app()
-       
