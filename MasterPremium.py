@@ -53,8 +53,8 @@ registration_numbers = sorted(set([
     "ZS 606PS (NEOPLAN) 2014 - miejsc 59",
     "ZST 9327A (IRISBUS) 2007 - miejsc 62",
     "ZS716NY (SETRA) 2010 - miejsc 80",
-    "ZST47407 (MAN)",
-    "ZS 897PS",
+    "ZST47407 (MAN) 2006 - miejsc 59",
+    "ZS 897PS (NEOPLAN) 2014 - miejsc 55,
 ]))
 
 # Lista relacji autobusów
@@ -65,7 +65,7 @@ if "selected_items" not in st.session_state:
     st.session_state.selected_items = []
 
 # Tytuł aplikacji
-st.title("MASTER PREMIUM - Rejestracja autobusów")
+st.title("MASTER PREMIUM")
 
 # Wybór tablicy rejestracyjnej
 st.subheader("Wybierz numer rejestracyjny:")
