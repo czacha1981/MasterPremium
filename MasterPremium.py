@@ -7,7 +7,6 @@ registration_numbers = sorted(set([
     "ZS 881MX (MAN) niebieski 2014 - miejsc 54",
     "ZS 395MR (MAN) złoty 2013 - miejsc 57",
     "ZS 078PN (MAN) biały 2015 - miejsc 57",
-    "ZS 724NY (MAN) biały 2014 - miejsc 59",
     "ZS 607PS (MAN) biały 2016 - miejsc 57",
     "ZS 079PN (MAN) biały 2015 - miejsc 57",
     "ZS 396MR (MAN) srebrny 2014 - miejsc 57",
