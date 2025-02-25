@@ -40,6 +40,7 @@ registration_numbers = sorted(set([
     "ZS716NY (SETRA) 2010 - miejsc 80",
     "ZST47407 (MAN) 2006 - miejsc 59",
     "ZS 897PS (NEOPLAN) 2014 - miejsc 55",
+    "ZS 972KN (MAN) 2018 - miejsc 52",
 ]))
 
 # Lista relacji autobusów
