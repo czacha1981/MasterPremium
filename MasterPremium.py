@@ -13,6 +13,7 @@ registration_numbers = sorted(set([
     "ZS 396MR (MAN) srebrny 2014 - miejsc 57",
     "ZS 102UC (MAN) biały 2024 - miejsc 61",
     "ZS 263LU (MAN) biały 2015 - miejsc 55",
+    "ZS 724NY (MAN) biały 2014 - miejsc 59      ",
     "ZS 856PP (SETRA) żółty 2006 - miejsc 70",
     "ZS 869MW (MAN) czarny 2013 - miejsc 59",
     "ZS 808HE (VOLVO) biały 2017 - miejsc 63",
@@ -26,6 +27,20 @@ registration_numbers = sorted(set([
     "ZS 103UC (MAN) biały 2024 - miejsc 61",
     "ZS 895PS (MAN) biały 2014 - miejsc 54",
     "ZS 745LE (Mercedes) 2019 - miejsc 21",
+    "ZS 102UC (MAN) biały 2024 - miejsc 61      ",
+    "ZS 263LU (MAN) biały 2015 - miejsc 55        ",
+    "ZS 724NY (MAN) biały 2014 - miejsc 59      ",
+    "ZS 869MW (MAN) czarny 2013 - miejsc 59     ",
+    "ZS 808HE (VOLVO) biały 2017 - miejsc 63     ",
+    "ZS 024MV (MAN) żółty 2014 - miejsc 57      ",
+    "ZS 105MX (MAN) czarny 2013 - miejsc 59       ",
+    "ZS 846MJ (MAN) czarny 2013 - miejsc 57       ",
+    "ZS 913PM (MAN) biały 2014 - miejsc 54         ",
+    "ZS 912PM (MAN) biały 2014 - miejsc 59        ",
+    "ZS 974KN (MAN) biały 2018 - miejsc 51        ",
+    "ZS 101UC (MAN) biały 2024 - miejsc 61         ",
+    "ZS 103UC (MAN) biały 2024 - miejsc 61         ",
+    "ZS 895PS (MAN) biały 2014 - miejsc 54            ",
     "ZS 920NP (Neoplan) 2013 - miejsc 59",
     "ZST 77194 (Setra) 2009 - miejsc 52",
     "ZS 180PF (BOVA) 2007 - miejsc 59",
@@ -39,7 +54,7 @@ registration_numbers = sorted(set([
     "ZST 9327A (IRISBUS) 2007 - miejsc 62",
     "ZS716NY (SETRA) 2010 - miejsc 80",
     "ZST47407 (MAN)",
-    "ZS 897PS"
+    "ZS 897PS",
 ]))
 
 # Lista relacji autobusów
